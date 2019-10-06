@@ -1,0 +1,80 @@
+﻿@model IEnumerable<WebUserRegistration.Models.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create", "Create")
+    </p>
+    <script src="js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+         var strdata = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        displayItems(strdata);
+    </script>
+    @*<table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RegisteredDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EventDays)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AddationalRequest)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gender)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RegisteredDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EventDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AddationalRequest)
+                        </td>
+        </tr>
+        }
+        </tbody>
+        </table>*@
+
+</body>
+</html>
